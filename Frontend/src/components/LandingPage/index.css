@@ -1,0 +1,29 @@
+.landing-page-maincontainer{
+    background-image: url('https://res.cloudinary.com/djynsag8d/image/upload/v1754032505/backgroundImage_whqwec.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 20px;
+
+}
+
+.doctor-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.search-input {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 400px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    outline: none;
+}
+@media (max-width: 767px) {
+    .search-input{
+        width: 100%;
+    }
+}

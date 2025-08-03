@@ -1,0 +1,87 @@
+.img-container{
+    width: 250px;
+    height: 250px;
+}
+.img{
+    height: 100%;
+    width: 100%;
+}
+.list{
+    width: 47%;
+}
+.list-item{
+    width: 100%;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 0 10px;
+    gap: 100px;
+    background-color: #F9FAFB ;
+}
+.name{
+    font-size: 25px;
+    font-weight: bold;
+    color: #27AE60;
+}
+.doctor-desc{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.specialization{
+    font-size: 17px;
+    color: #6B7280;
+    font-weight: 600;
+}
+.special{
+    color: #2D9CDB;
+    font-weight: 600;
+    font-size: 23px;
+}
+.appointment-btn{
+    color: white;
+    font-size: 17px;
+    background-color: #27AE60; 
+    border-radius: 12px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.appointment-btn:hover {
+  background-color: #2D9CDB;
+  cursor: pointer;
+}
+.result{
+    font-weight: 600;
+    font-size: 17px;
+    border-radius: 12px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.avail{
+    color: #27AE60;
+}
+.fully-booked{
+    color: #EB5757;
+}
+.on-leave{
+    color: #EB5757;
+}
+
+@media (max-width: 767px) {
+    .list{
+        width: 100%;
+    }
+    .img-container{
+        width: 100%;
+        height: 250px;
+    }
+    .list-item{
+        padding: 20px;
+        display: block;
+    }
+}

@@ -1,0 +1,129 @@
+.profile-main-container{
+    background: linear-gradient(135deg,white,#27AE60);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-left-container{
+    height: 100%;
+    width: 50%;
+}
+.profile-img{
+    height: 100%;
+    width: 100%;
+}
+.profile-sub-container{
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+}
+.profile-right-container{
+    background-color: #F3F4F6;
+    height: 100%;
+    color: #374151;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-evenly;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 12px;
+}
+.dark-text{
+    color: #1F2937;
+    font-weight: bold;
+}
+.book-btn{
+    color: white;
+    font-size: 17px;
+    background-color: #27AE60; 
+    border-radius: 12px;
+    align-self: flex-start;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+.book-btn:hover {
+  background-color: #2D9CDB;
+  cursor: pointer;
+}
+.modal{
+    border-radius: 12px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.input{
+    border: 2px solid gray;
+    border-radius: 10px;
+    padding: 3px 10px;
+    outline: none;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.submit-btn{
+    border-radius: 10px;
+    padding: 5px 25px;
+    font-weight: 600;
+    color: white;
+    background-color: #2D9CDB;
+}
+.btn-container{
+    text-align: center;
+}
+.err-class{
+    color: red;
+}
+.green{
+    color: green;
+}
+.submitted-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.submit-text{
+    font-size: 20px;
+    color: rgb(140, 137, 137);
+    font-weight: 600;
+}
+
+@media (max-width: 767px) {
+    .profile-left-container{
+        padding: 0px 20px;
+        padding-top: 30px;
+        width: 100%;
+    }
+    .profile-right-container{
+        width: 100%;
+    }
+    .profile-sub-container{
+        display: block;
+        width: 100%;
+    }
+    .profile-main-container{
+        padding: 0px;
+    }
+    .popup-content{
+        width: 100% !important;
+    }
+    .modal{
+        width: 100%;
+    }
+}
