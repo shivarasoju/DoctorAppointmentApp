@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-import { Circles } from "react-loader-spinner";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import { FaCheckCircle } from "react-icons/fa";
 
@@ -60,6 +60,8 @@ const DoctorProfilePage = (props) => {
       setError({ ...error, emailError: "*Required email" });
     } else if (formData.date === "") {
       setError({ ...error, dateError: "*Required date" });
+    } else if (!formData.email.includes("@")) {
+      setError({ ...error, emailError: "*Invalid email format" });
     } else {
       setFormData({ ...initialFormData, isSubmitted: true });
       setError({ ...initState });
@@ -81,7 +83,7 @@ const DoctorProfilePage = (props) => {
       }
     };
     getData();
-  }, []);
+  }, [url]);
 
   const renderSuccessView = () => {
     const {
@@ -156,11 +158,12 @@ const DoctorProfilePage = (props) => {
                     <form className="form" onSubmit={handleForm}>
                       <div className="input-container">
                         <div>
-                          <label htmlFor="name">PATIENT NAME</label>
+                          <label htmlFor="patientName">PATIENT NAME</label>
                         </div>
                         <input
-                          id="name"
+                          id="patientName"
                           type="text"
+                          name="patientName"
                           className="input"
                           placeholder="Enter patient name"
                           onChange={handleName}
@@ -171,13 +174,14 @@ const DoctorProfilePage = (props) => {
                       </div>
                       <div className="input-container">
                         <div>
-                          <label htmlFor="name">EMAIL</label>
+                          <label htmlFor="email">EMAIL</label>
                         </div>
                         <input
-                          id="name"
+                          id="email"
                           type="text"
+                          name="email"
                           className="input"
-                          placeholder="Enter patient name"
+                          placeholder="Enter patient email"
                           onChange={handleEmail}
                         />
                         {error.emailError && (
@@ -186,11 +190,12 @@ const DoctorProfilePage = (props) => {
                       </div>
                       <div className="input-container">
                         <div>
-                          <label htmlFor="name">SELECT DATE</label>
+                          <label htmlFor="date">SELECT DATE</label>
                         </div>
                         <input
-                          id="name"
+                          id="date"
                           type="date"
+                          name="date"
                           placeholder="Enter patient name"
                           onChange={handleDate}
                         />
@@ -219,7 +224,7 @@ const DoctorProfilePage = (props) => {
       case apiStatusConstants.loading:
         return (
           <div className="flex justify-center items-center min-h-[200px]">
-            <Circles height={60} width={60} color="#2D9CDB" />
+            <ClipLoader size={50} color="#2D9CDB" />
           </div>
         );
 

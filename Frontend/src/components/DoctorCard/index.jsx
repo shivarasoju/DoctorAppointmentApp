@@ -6,6 +6,8 @@ import { FaCheckCircle } from "react-icons/fa";
 
 import { MdBlock } from "react-icons/md";
 
+import PropTypes from "prop-types";
+
 import "./index.css";
 
 const DoctorCard = (props) => {
@@ -32,6 +34,8 @@ const DoctorCard = (props) => {
             <MdBlock size={24} /> {availability}
           </p>
         );
+      default:
+        return <p className="unknown result">{availability}</p>;
     }
   };
 
@@ -40,7 +44,11 @@ const DoctorCard = (props) => {
       <Link to={`/${id}`}>
         <div className="list-item">
           <div className="img-container">
-            <img className="img" src={profile_image} alt="shiva" />
+            <img
+              className="img"
+              src={profile_image}
+              alt={name || "Doctor profile"}
+            />
           </div>
           <div className="doctor-desc">
             <p className="name">{name}</p>
@@ -54,6 +62,25 @@ const DoctorCard = (props) => {
       </Link>
     </li>
   );
+};
+
+DoctorCard.propTypes = {
+  doctor: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    name: PropTypes.string.isRequired,
+    profile_image: PropTypes.string.isRequired,
+    specialization: PropTypes.string.isRequired,
+    availability: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+DoctorCard.defaultProps = {
+  doctor: {
+    name: "Unknown",
+    profile_image: "/default.png",
+    specialization: "General",
+    availability: "Status Unknown",
+  },
 };
 
 export default DoctorCard;

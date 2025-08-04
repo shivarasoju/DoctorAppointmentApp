@@ -7,8 +7,14 @@ import DoctorProfilePage from "./components/DoctorProfilePage";
 function App() {
   return (
     <Routes>
-      <Route exact path="/" element={<LandingPage />} />
-      <Route exact path="/:id" element={<DoctorProfilePage />} />
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/:id" element={<DoctorProfilePage />} />
+      <Route
+        path="*"
+        element={
+          <h1 className="text-center mt-10 text-red-500">Page Not Found</h1>
+        }
+      />
     </Routes>
   );
 }
