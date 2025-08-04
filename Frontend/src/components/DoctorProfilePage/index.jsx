@@ -63,7 +63,7 @@ const DoctorProfilePage = () => {
   };
 
   const { id } = useParams();
-  const url = `${import.meta.env.VITE_API_URL}${id}`;
+  const url = `${import.meta.env.VITE_API_URL}/${id}`;
 
   useEffect(() => {
     const getData = async () => {
