@@ -12,13 +12,25 @@ const PORT=process.env.PORT || 3000
 
 const app = express()
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:5173',
+];
+
 app.use(express.json())
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL||'http://localhost:5173',
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
   })
 );
+
 
 let db = null
 const dbPath = path.join(__dirname, 'doctorAppointment.db')
